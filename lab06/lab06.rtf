@@ -1,0 +1,98 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf400
+{\fonttbl\f0\froman\fcharset0 TimesNewRomanPSMT;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red255\green0\blue0;}
+{\*\expandedcolortbl;;\csgenericrgb\c100000\c0\c0;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat8\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat8\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat8\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid201\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid3}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}}
+\margl1440\margr1440\vieww14260\viewh16140\viewkind1
+\deftab720
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\ri-720\partightenfactor0
+
+\f0\fs24 \cf0 Lab 6 Worksheet\
+\
+Answer the following questions by modifying this text file. Add your answer below each question.\
+\
+1\cf2 . \cf0 List one property of a RNG that CheckRandomNumberGenerator measures and give a reason why you think that this is an important property.\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\ri-720\partightenfactor0
+
+\b \cf0 Answer:\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\li720\fi-360\ri-720\partightenfactor0
+\ls1\ilvl0
+\f1\b0 \cf0 -	
+\f0 Max number of times a number was generated\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\ri-720\partightenfactor0
+\cf0 	When evaluating a random number generator,  we do not want to repetitively get the same number, which defeats the purpose of randomization and makes the number sequence very predictable.\
+\
+\
+2. It takes a lot longer to generate ten million random numbers using JavasRandomNumberGenerator than using PoorRandomNumberGenerator. Why?\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\ri-720\partightenfactor0
+
+\b \cf0 Answer:\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\ri-720\partightenfactor0
+
+\b0 \cf0 	Regardless of how many times we want to generate the random number, the time used by PoorRandomNumberGenerator is almost always negligible. The reason is that calling nextInt() from PoorGenerator always yield constant time O(c) since it returns 1, whereas every time calling nextInt() from JavaGenerator, there is an algorithm running to return the next integer number.  \
+\
+\
+3. The "Number of Zeros after 10000 tries" refers to the number of integers between 0 and 10000 (exclusive) that were not generated in 10000 tries. For PoorRandomNumberGenerator this value is 9999. Why?\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\ri-720\partightenfactor0
+
+\b \cf0 Answer
+\b0 : \
+	Because PoorGenerator always returns 1, therefore the rest of (1000 \'96 1) numbers in this range never gets generated. \
+\
+\
+4. What does the number of integers between 0 and 10000 (exclusive) that were not generated in 10000 tries tell us about the RNG? Does JavasRandomNumberGenerator generate every integer between 0 and 10000 (exclusive) in 10000 tries?\
+
+\b Answer
+\b0 :\
+	It tells us that with the algorithm used by the RNG, how many values we can never get. It is similar to the y-range of a function, and the numbers the algorithm can not generate is out of this y-range. With Java RNG, there is always 3680 numbers we can not get within 10000 tries.\
+\
+\
+5. The "Number of odd_even pairs" refers to the number of times an odd number is followed by an even number in the generated sequence of integers. What is a good value for this number?\
+
+\b Answer:\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\ri-720\partightenfactor0
+
+\b0 \cf0 	Roughly 2500 would be a good value for this number. This is because we do not want our number sequence to follow any pattern. If the entire sequence follows Odd \'96 Even \'96 Odd, then it presents a predictable pattern. Ideally, on each run of the program, this value will change follows an unpredictable rule. However, the sequence an RNG generates is only pseudorandom. Therefore, based on the law of large number, we want the probability of getting each of the four possibilities be equal. 10000/4 = 2500 values would be good in this case.\
+\
+\
+6. CheckRandomNumberGenerator checks that given the same seed, the RNG produces the same sequence of integers. What is an advantage of this behavior? What is a disadvantage?\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\ri-720\partightenfactor0
+
+\b \cf0 Answer: \
+Advantage:  
+\b0 The number sequence is reproducible. If we want to test some programs with a sequence of random number, we want this sequence to be the same giving the same seed every time we test it.\
+
+\b Disadvantage
+\b0 : The number sequence is predictable and fixed for the same seed. It is not actually random.\
+\
+\
+7. For what properties did your RNG perform better than PoorRandomNumberGenerator?\
+
+\b Answer
+\b0 :\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\li720\fi-360\ri-720\partightenfactor0
+\ls2\ilvl0
+\f1 \cf0 -	
+\f0 Number of Zeros after 10000 tries\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\ri-720\partightenfactor0
+\cf0 It can generate roughly 100 unique numbers after 10000 tries\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\li720\fi-360\ri-720\partightenfactor0
+\ls3\ilvl0
+\f1 \cf0 -	
+\f0 Number of odd_even  pairs\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\ri-720\partightenfactor0
+\cf0 The probabilities of odd- even, even-even, even-odd, odd-odd are roughly 25% each, which resembles Java RNG.\
+\
+\
+8. Why are RNGs that use computational algorithms considered "pseudorandom"? \
+\
+\pard\pardeftab720\ri0\partightenfactor0
+
+\b \cf0 Answer
+\b0 :\
+\pard\pardeftab720\fi720\ri0\partightenfactor0
+\cf0 Because it is not actually randomly generated. Each RNG follows an algorithm by which each number in the sequence is dependent on the previous number. For example, if we pass in the same seed and constants to a RNG, we will get the same sequence of numbers. It only seems random but is not random.\
+}

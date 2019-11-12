@@ -1,0 +1,62 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf400
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;\f2\fnil\fcharset0 Menlo-Italic;
+\f3\fnil\fcharset0 Menlo-Bold;}
+{\colortbl;\red255\green255\blue255;\red106\green62\blue62;\red127\green0\blue85;\red0\green0\blue0;
+}
+{\*\expandedcolortbl;;\csgenericrgb\c41569\c24314\c24314;\csgenericrgb\c49804\c0\c33333;\cssrgb\c0\c0\c0;
+}
+\margl1440\margr1440\vieww12540\viewh13740\viewkind1
+\deftab720
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\ri0\partightenfactor0
+
+\f0\fs24 \cf0 Lab 4 Worksheet\
+\
+Answer the following questions by modifying this text file. Add your answer below each question.\
+\
+\
+1. Which two binarySearch tests are failing?\
+\
+- second one: 
+\f1\fs30 Part1.
+\f2\i binarySearch
+\f1\i0 (\cf2 arr1\cf0 , 0)== 
+\f3\b \cf3 true\
+\cf4 - third one: 
+\f1\b0 \cf0 Part1.
+\f2\i binarySearch
+\f1\i0 (\cf2 arr2\cf0 , 20) == 
+\f3\b \cf3 false
+\f0\b0\fs24 \cf0 \
+\
+\
+2. What are the values of arr and goal passed in to binary search?\
+\
+- arr : \{1, 2, 3, 4, 5\}\
+- goal: 2\
+\
+3. For each of the two cases of binarySearch that are failing, which return statements are they executing in error (is it returning true when it should be returning false, or the other way around)?\
+\
+- For the first case that is failing, the first if (goal == mid) should return false, instead it returns true. \
+- For the second case that is failing, it should return true, instead it returns false. \
+\
+\
+4. What is the bug in binarySearch? How do you fix it?\
+\
+- In binary search method, we should not compare goal with mid value (which is merely an index of the array) , instead we should compare goal with arr[mid]. \
+\
+5. Which loops appear to be inifinite?\
+\
+- Loop2 & loop4\
+\
+6. For the loops that you found to be infinite, briefly explain why they are never progressing.\
+\
+- In loop 2, since b is 0, so b *= a is always 0, so b < 10 is always true\
+- in loop 4, since c is negative and f is positive, so F minus c is always positive, and f > 0 is always true. \
+\
+7. What does the call to password.split(" ") appear to do? Hint: examine the input value of "password", then examine the items in the "tokens" array returned by the call.\
+\
+- it splits the password string based on space \'93 \'94 and it returns an array of string. For example, the password string is \'93 a b c\'94, .split(\'93 \'93) returns three character [\'93a\'94, \'93b\'94, \'93c\'94]. \
+\
+8. What is the correct password?\
+\cf4 - \'93
+\f1\fs30 1 4 9 16 25\'94}

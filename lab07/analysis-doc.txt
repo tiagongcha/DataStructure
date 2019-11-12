@@ -1,0 +1,31 @@
+When you are satisfied that your program is correct, write a brief analysis
+document. Please answer with full, well written sentences. Ensure that your
+analysis document addresses the following:
+
+1. Collect and plot running times in order to answer each of the following
+questions. Note that for this lab we do not specify the exact procedure for
+creating plots. You must design your own timing experiments that sufficiently
+analyze the problems. Be sure to explain all plots and answers.
+
+Is the running time of the addFirst method O(c) as expected? How does the
+running time of addFirst(item) for DoublyLinkedList compare to add(0, item) for
+ArrayList?
+
+Is the running time of the get method O(N) as expected? How does the running
+time of get(i) for DoublyLinkedList compare to get(i) for ArrayList?
+
+Is the running time of the remove method O(N) as expected? How does the running
+time of remove(i) for DoublyLinkedList compare to remove(i) for ArrayList?
+
+2. In general, how does DoublyLinkedList compare to ArrayList, both in
+functionality and performance? Please refer to Java's ArrayList documentation.
+
+3. In general, how does DoublyLinkedList compare to Java's LinkedList, both in
+functionality and performance? Please refer to Java's ArrayList documentation.
+
+4. Compare and contrast using a LinkedList vs an ArrayList as the backing data
+structure for the BinarySearchSet from your previous lab. Would the Big-Oh
+complexity change on add / remove / contains?  
+
+Upload your solution (.pdf only) through Canvas.
+
